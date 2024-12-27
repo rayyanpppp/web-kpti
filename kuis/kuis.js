@@ -47,167 +47,167 @@ const questions = [{
         "id": 10,
         "text": "Pesimis",
         "scale": "depression"
-     }
-    // {
-    //     "id": 11,
-    //     "text": "Mudah merasa kesal",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 12,
-    //     "text": "Merasa banyak menghabiskan energi karena cemas",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 13,
-    //     "text": "Merasa sedih dan depresi",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 14,
-    //     "text": "Tidak sabaran",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 15,
-    //     "text": "Kelelahan",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 16,
-    //     "text": "Kehilangan minat pada banyak hal (misal: makan, ambulasi, sosialisasi)",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 17,
-    //     "text": "Merasa diri tidak layak",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 18,
-    //     "text": "Mudah tersinggung",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 19,
-    //     "text": "Berkeringat (misal: tangan berkeringat) tanpa stimulasi oleh cuaca maupun latihan fisik",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 20,
-    //     "text": "Ketakutan tanpa alasan yang jelas",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 21,
-    //     "text": "Merasa hidup tidak berharga",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 22,
-    //     "text": "Sulit untuk beristirahat",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 23,
-    //     "text": "Kesulitan dalam menelan",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 24,
-    //     "text": "Tidak dapat menikmati hal-hal yang saya lakukan",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 25,
-    //     "text": "Perubahan kegiatan jantung dan denyut nadi tanpa stimulasi oleh latihan fisik",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 26,
-    //     "text": "Merasa hilang harapan dan putus asa",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 27,
-    //     "text": "Mudah marah",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 28,
-    //     "text": "Mudah panik",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 29,
-    //     "text": "Kesulitan untuk tenang setelah sesuatu yang mengganggu",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 30,
-    //     "text": "Takut diri terhambat oleh tugas-tugas yang tidak biasa dilakukan",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 31,
-    //     "text": "Sulit untuk antusias pada banyak hal",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 32,
-    //     "text": "Sulit mentoleransi gangguan-gangguan terhadap hal yang sedang dilakukan",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 33,
-    //     "text": "Berada pada keadaan tegang",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 34,
-    //     "text": "Merasa tidak berharga",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 35,
-    //     "text": "Tidak dapat memaklumi hal apapun yang menghalangi Anda untuk menyelesaikan hal yang sedang Anda lakukan",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 36,
-    //     "text": "Ketakutan",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 37,
-    //     "text": "Tidak ada harapan untuk masa depan",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 38,
-    //     "text": "Merasa hidup tidak berarti",
-    //     "scale": "depression"
-    // },
-    // {
-    //     "id": 39,
-    //     "text": "Mudah gelisah",
-    //     "scale": "stress"
-    // },
-    // {
-    //     "id": 40,
-    //     "text": "Khawatir dengan situasi saat diri Anda mungkin menjadi panik dan mempermalukan diri sendiri",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 41,
-    //     "text": "Gemetar",
-    //     "scale": "anxiety"
-    // },
-    // {
-    //     "id": 42,
-    //     "text": "Sulit untuk meningkatkan inisiatif dalam melakukan sesuatu",
-    //     "scale": "depression"
-    // }
+     },
+    {
+        "id": 11,
+        "text": "Mudah merasa kesal",
+        "scale": "stress"
+    },
+    {
+        "id": 12,
+        "text": "Merasa banyak menghabiskan energi karena cemas",
+        "scale": "stress"
+    },
+    {
+        "id": 13,
+        "text": "Merasa sedih dan depresi",
+        "scale": "depression"
+    },
+    {
+        "id": 14,
+        "text": "Tidak sabaran",
+        "scale": "stress"
+    },
+    {
+        "id": 15,
+        "text": "Kelelahan",
+        "scale": "anxiety"
+    },
+    {
+        "id": 16,
+        "text": "Kehilangan minat pada banyak hal (misal: makan, ambulasi, sosialisasi)",
+        "scale": "depression"
+    },
+    {
+        "id": 17,
+        "text": "Merasa diri tidak layak",
+        "scale": "depression"
+    },
+    {
+        "id": 18,
+        "text": "Mudah tersinggung",
+        "scale": "stress"
+    },
+    {
+        "id": 19,
+        "text": "Berkeringat (misal: tangan berkeringat) tanpa stimulasi oleh cuaca maupun latihan fisik",
+        "scale": "anxiety"
+    },
+    {
+        "id": 20,
+        "text": "Ketakutan tanpa alasan yang jelas",
+        "scale": "anxiety"
+    },
+    {
+        "id": 21,
+        "text": "Merasa hidup tidak berharga",
+        "scale": "depression"
+    },
+    {
+        "id": 22,
+        "text": "Sulit untuk beristirahat",
+        "scale": "stress"
+    },
+    {
+        "id": 23,
+        "text": "Kesulitan dalam menelan",
+        "scale": "anxiety"
+    },
+    {
+        "id": 24,
+        "text": "Tidak dapat menikmati hal-hal yang saya lakukan",
+        "scale": "depression"
+    },
+    {
+        "id": 25,
+        "text": "Perubahan kegiatan jantung dan denyut nadi tanpa stimulasi oleh latihan fisik",
+        "scale": "anxiety"
+    },
+    {
+        "id": 26,
+        "text": "Merasa hilang harapan dan putus asa",
+        "scale": "depression"
+    },
+    {
+        "id": 27,
+        "text": "Mudah marah",
+        "scale": "stress"
+    },
+    {
+        "id": 28,
+        "text": "Mudah panik",
+        "scale": "anxiety"
+    },
+    {
+        "id": 29,
+        "text": "Kesulitan untuk tenang setelah sesuatu yang mengganggu",
+        "scale": "stress"
+    },
+    {
+        "id": 30,
+        "text": "Takut diri terhambat oleh tugas-tugas yang tidak biasa dilakukan",
+        "scale": "anxiety"
+    },
+    {
+        "id": 31,
+        "text": "Sulit untuk antusias pada banyak hal",
+        "scale": "depression"
+    },
+    {
+        "id": 32,
+        "text": "Sulit mentoleransi gangguan-gangguan terhadap hal yang sedang dilakukan",
+        "scale": "stress"
+    },
+    {
+        "id": 33,
+        "text": "Berada pada keadaan tegang",
+        "scale": "stress"
+    },
+    {
+        "id": 34,
+        "text": "Merasa tidak berharga",
+        "scale": "depression"
+    },
+    {
+        "id": 35,
+        "text": "Tidak dapat memaklumi hal apapun yang menghalangi Anda untuk menyelesaikan hal yang sedang Anda lakukan",
+        "scale": "stress"
+    },
+    {
+        "id": 36,
+        "text": "Ketakutan",
+        "scale": "anxiety"
+    },
+    {
+        "id": 37,
+        "text": "Tidak ada harapan untuk masa depan",
+        "scale": "depression"
+    },
+    {
+        "id": 38,
+        "text": "Merasa hidup tidak berarti",
+        "scale": "depression"
+    },
+    {
+        "id": 39,
+        "text": "Mudah gelisah",
+        "scale": "stress"
+    },
+    {
+        "id": 40,
+        "text": "Khawatir dengan situasi saat diri Anda mungkin menjadi panik dan mempermalukan diri sendiri",
+        "scale": "anxiety"
+    },
+    {
+        "id": 41,
+        "text": "Gemetar",
+        "scale": "anxiety"
+    },
+    {
+        "id": 42,
+        "text": "Sulit untuk meningkatkan inisiatif dalam melakukan sesuatu",
+        "scale": "depression"
+    }
 ];
 
 let currentQuestionIndex = 0;
@@ -302,11 +302,11 @@ function submitQuiz() {
     // Tentukan gambar berdasarkan total skor
     let imageSrc = '';
     if (totalScore <= 42) {
-        imageSrc = 'https://bisik.b-cdn.net/1733916128420-daeb1cc7bda5d341.webp'; // Normal
+        imageSrc = '../image/chillguy.webp'; // Normal
     } else if (totalScore <= 85) {
-        imageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtaB-xQYfLul1xWu1szoMGC--yxjy77JD2g&s'; // Sedang
+        imageSrc = '../image/sugengmutant.jfif '; // Sedang
     } else {
-        imageSrc = 'https://cdn-brilio-net.akamaized.net/webp/news/2020/03/09/180125/1187280-10-meme-lucu-sadboy-tom-si-kucing-ini-menghibur-kamu-yang-ambyar.jpg'; // Parah
+        imageSrc = '../image/aniesbas.webp'; // Parah
     }
 
     const results = `

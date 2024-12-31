@@ -24,14 +24,14 @@
         <div id="quiz">
         </div>
         <div class="navigation">
-            <button id="prev" onclick="prevQuestion()" disabled>←</button>
-            <!-- span id="question-counter">1/42</span> -->
-            <button id="next" onclick="nextQuestion()">→ </button>
+            <button style="border-radius: 5px;" id="prev" onclick="prevQuestion()" disabled>←</button>
+            <span id="question-progress">1/42</span>
+            <button style="border-radius: 5px;" id="next" onclick="nextQuestion()">→ </button>
         </div>
         <div id="quiz-navigation" class="quiz-navigation"></div>
 
         <div class="result">
-            <button style="margin-top:30px" id="submit" onclick="submitQuiz()" disabled>
+            <button style="margin-top:30px ; border-radius: 5px;" id="submit" onclick="submitQuiz()" disabled>
                 <i class="fas fa-check-circle"></i> Submit
             </button>
         </div>

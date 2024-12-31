@@ -47,7 +47,7 @@ const questions = [{
         "id": 10,
         "text": "Pesimis",
         "scale": "depression"
-     },
+    },
     {
         "id": 11,
         "text": "Mudah merasa kesal",
@@ -230,7 +230,6 @@ function jumpToQuestion(index) {
     loadQuestion(index);
 }
 
-// Panggil updateQuizNavigation setiap kali soal dimuat atau jawaban diperbarui
 function saveAnswer(index, value) {
     answers[index] = value;
     document.getElementById('submit').disabled = answers.includes(null);
@@ -245,7 +244,7 @@ function loadQuestion(index) {
 
     questionContainer.innerHTML = `
         <div class="question">
-            <p>${question.text}</p>
+            <p><b>${question.text}</b></p>
             <div class="options">
                 ${optionsText.map(
                     (text, value) => `
@@ -268,17 +267,38 @@ function loadQuestion(index) {
 }
 
 
+function updateNavigationButtons() {
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    // Aktifkan atau nonaktifkan tombol Prev
+    if (currentQuestionIndex === 0) {
+        prevButton.disabled = true; // Disabled jika di soal pertama
+    } else {
+        prevButton.disabled = false; // Aktif jika bukan soal pertama
+    }
+
+    // Aktifkan atau nonaktifkan tombol Next
+    if (currentQuestionIndex === questions.length - 1) {
+        nextButton.disabled = true; // Disabled jika di soal terakhir
+    } else {
+        nextButton.disabled = false; // Aktif jika bukan soal terakhir
+    }
+}
+
 function prevQuestion() {
     if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        loadQuestion(currentQuestionIndex);
+        currentQuestionIndex--; // Kurangi indeks soal
+        loadQuestion(currentQuestionIndex); // Fungsi untuk memuat soal
+        updateNavigationButtons(); // Update status tombol
     }
 }
 
 function nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        loadQuestion(currentQuestionIndex);
+        currentQuestionIndex++; // Tambah indeks soal
+        loadQuestion(currentQuestionIndex); // Fungsi untuk memuat soal
+        updateNavigationButtons(); // Update status tombol
     }
 }
 
@@ -309,52 +329,66 @@ function submitQuiz() {
         imageSrc = '../image/aniesbas.webp'; // Parah
     }
 
-    const results = `
-    <h2>Hasil Penilaian:</h2>
-    <table class="results-table">
-        <thead>
-            <tr>
-                <th>Type</th>
-                <th>Your Score</th>
-                <th>Level</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Depression</td>
-                <td>${scales.depression}</td>
-                <td>${getLevel('depression', scales.depression)}</td>
-            </tr>
-            <tr>
-                <td>Anxiety</td>
-                <td>${scales.anxiety}</td>
-                <td>${getLevel('anxiety', scales.anxiety)}</td>
-            </tr>
-            <tr>
-                <td>Stress</td>
-                <td>${scales.stress}</td>
-                <td>${getLevel('stress', scales.stress)}</td>
-            </tr>
+    const results =
+        `<h2>Hasil Penilaian:</h2>
+<table class="results-table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Your Score</th>
+            <th>Level</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Depression</td>
+            <td>${scales.depression}</td>
+            <td style="color: ${getLevelColor(getLevel('depression', scales.depression))}">
+                ${getLevel('depression', scales.depression)}
+            </td>
+        </tr>
+        <tr>
+            <td>Anxiety</td>
+            <td>${scales.anxiety}</td>
+            <td style="color: ${getLevelColor(getLevel('anxiety', scales.anxiety))}">
+                ${getLevel('anxiety', scales.anxiety)}
+            </td>
+        </tr>
+        <tr>
+            <td>Stress</td>
+            <td>${scales.stress}</td>
+            <td style="color: ${getLevelColor(getLevel('stress', scales.stress))}">
+                ${getLevel('stress', scales.stress)}
+            </td>
+        </tr>
         <tr>
             <td><strong>Total</strong></td>
             <td colspan="2"><strong>${scales.depression + scales.anxiety + scales.stress}</strong></td>
         </tr>
-
-        </tbody>
-    </table>
-    <div class="result-image" >
-        <img style="margin-top:50px; width:45%"src="${imageSrc}" alt="Result Image" />
+    </tbody>
+</table>
+    <div class="result-image">
+        <img style="margin-top:40px; width:70%" src="${imageSrc}" alt="Result Image" />
     </div>
     <div class="chart-container">
         <canvas id="resultChart" width="300" height="300"></canvas>
         <canvas id="barChart" width="300" height="300"></canvas>
     </div>
-    <button id="print-pdf" onclick="printResultsToPDF()">Cetak Hasil (PDF)</button>
-    `;
+    <button 
+        onclick="window.location.href='../index.html'" 
+        style="padding:8px 18px; font-size:16px; background-color:#e63946; color:white; border:none; border-radius:5px; cursor:pointer;">
+        <i class="fa-solid fa-house"></i> Back to Home
+    </button>
+    <button 
+        onclick="window.location.href='kuis.html'" 
+        style="padding:8px 18px; font-size:16px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;margin-top:5px;">
+        <i class="fa-solid fa-rotate-right"></i> Ulang Kuis
+    </button>`;
 
     document.getElementById('quiz').innerHTML = results;
     document.querySelector('.navigation').style.display = 'none';
     document.querySelector('.result').style.display = 'none';
+    document.getElementById('quiz-navigation').style.display = 'none';
 
     // Render Charts
     renderPieChart(scales);
@@ -425,9 +459,6 @@ function renderBarChart(scales) {
     });
 }
 
-
-
-
 function getLevel(scale, score) {
     const levels = {
         depression: [9, 13, 20, 27, Infinity],
@@ -442,6 +473,44 @@ function getLevel(scale, score) {
         if (score <= thresholds[i]) return labels[i];
     }
 }
+
+function getLevelColor(level) {
+    switch (level) {
+        case 'Sangat Parah':
+            return 'red';
+        case 'Parah':
+            return 'orange';
+        case 'Sedang':
+            return '#87CEEB';
+        case 'Normal':
+            return 'green';
+        default:
+            return 'black';
+    }
+}
+
+let currentQuestion = 1;
+const totalQuestions = 42;
+
+function updateQuestionProgress() {
+    document.getElementById('question-progress').textContent = `${currentQuestion}/${totalQuestions}`;
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+    if (currentQuestion > 1) {
+        currentQuestion--;
+        updateQuestionProgress();
+    }
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    if (currentQuestion < totalQuestions) {
+        currentQuestion++;
+        updateQuestionProgress();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', updateQuestionProgress);
 
 // Memuat pertanyaan pertama dan memperbarui nomor soal
 loadQuestion(currentQuestionIndex);
